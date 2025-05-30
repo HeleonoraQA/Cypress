@@ -1,12 +1,14 @@
 import * as pokemon_page from "../locators/pokemon_pages.json";
 import * as data from "../helpers/default_data.json";
 
+const baseUrl = Cypress.config('baseUrl'); 
+
 describe('Тесты для покемонов', function () {
 
     beforeEach('Перед началом теста', function () {
-          cy.visit('/');
+          cy.visit(baseUrl);
           cy.get(pokemon_page.login_button).should('be.visible');
-            });
+    });
  
 
 it('Покупка нового аватара', function () {
@@ -29,7 +31,8 @@ it('Покупка нового аватара', function () {
     cy.get('.card_date').type(data.card_date);                           // вводим срок действия карты
     cy.get('.card_name').type(data.card_name);                           // вводим имя владельца действия карты
     cy.get(pokemon_page.pay_button).click();     // нажимаем кнопку Оплатить
-    cy.get('.threeds_number').type(data.code_sms);                            // вводим код подтверждения СМС
+    cy.get(pokemon_page.pay_cvv).should('be.visible'); // кнопка видна
+    cy.get('.threeds_number').type(data.code_sms); // вводим код подтверждения СМС
     cy.get(pokemon_page.pay_cvv).click();   // нажимаем кнопку Оплатить
     cy.contains('Покупка прошла успешно').should('be.visible');
     cy.get(pokemon_page.back_shop_button).click(); //вернуться в магазин после успешной оплаты

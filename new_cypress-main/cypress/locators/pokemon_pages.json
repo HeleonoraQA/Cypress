@@ -4,7 +4,7 @@
     "login_button": ".MuiButton-root",
     "trainer_button": ".header_card_trainer",
     "change_avatar_btn": ".k_mobile > :nth-child(5) > #dropdown > img",
-    "pay_button": ".style_1_base_button_payment_body > .style_1_base_button_payment",
+    "pay_button": ".style_1_base_button_payment_body:has(.style_1_base_button_payment:not([disabled]))",
     "pay_cvv": ".style_1_base_button_payment_body > .style_1_base_button_payment",
     "back_shop_button": ".style_1_base_link_blue"
   }
