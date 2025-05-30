@@ -1,6 +1,6 @@
 {
-	"login":"user_login",
-	"password":"user_passw",
+	"login":"my_login",
+	"password":"my_psw",
 	"card_number":"4620869113632996",
 	"card_csv":"125",
 	"card_date":"1226",

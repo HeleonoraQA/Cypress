@@ -1,11 +1,6 @@
 describe('Проверка авторизации', function () {
 
-
-  it('search something', function () {
-     cy.visit('https://login.qa.studio/');
-     })
-
-     it('Верный логин и верный пароль', function () {
+  it('Верный логин и верный пароль', function () {
       cy.visit('https://login.qa.studio');
       cy.get('#mail').type('german@dolnikov.ru');
       cy.get('#pass').type('iLoveqastudio1');
